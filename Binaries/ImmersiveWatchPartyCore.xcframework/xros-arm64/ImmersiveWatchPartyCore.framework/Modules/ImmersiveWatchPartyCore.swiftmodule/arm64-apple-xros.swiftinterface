@@ -1,0 +1,230 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target arm64-apple-xros26.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -module-name ImmersiveWatchPartyCore
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+import AVFoundation
+import Combine
+import CryptoKit
+import Foundation
+import GroupActivities
+import RealityKit
+import Swift
+import SwiftUI
+import _Concurrency
+import _GroupActivities_SwiftUI
+import _RealityKit_SwiftUI
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_Concurrency.MainActor final public class ImmersiveWatchPartyManager : Foundation.ObservableObject {
+  @Combine.Published @_projectedValueProperty($sharePlayEnabled) @_Concurrency.MainActor final public var sharePlayEnabled: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor final public var $sharePlayEnabled: Combine.Published<Swift.Bool>.Publisher {
+    get
+  }
+  @Combine.Published @_projectedValueProperty($activeParticipantUUIDs) @_Concurrency.MainActor final public var activeParticipantUUIDs: Swift.Set<Foundation.UUID> {
+    get
+  }
+  @_Concurrency.MainActor final public var $activeParticipantUUIDs: Combine.Published<Swift.Set<Foundation.UUID>>.Publisher {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor final public var sharePlaySessionID: Foundation.UUID? {
+    get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor final public var sessionStartTime: Foundation.Date? {
+    get
+  }
+  #endif
+  @_Concurrency.MainActor final public var peakParticipantCount: Swift.Int {
+    get
+  }
+  @_Concurrency.MainActor final public let messageManager: ImmersiveWatchPartyCore.MessageManager
+  @_Concurrency.MainActor final public let messenger: ImmersiveWatchPartyCore.SharePlayMessenger
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor final public var systemCoordinator: GroupActivities.SystemCoordinator? {
+    get
+  }
+  #endif
+  @_Concurrency.MainActor weak final public var delegate: (any ImmersiveWatchPartyCore.ImmersiveWatchPartyDelegate)?
+  @_Concurrency.MainActor public init(localUUID: Foundation.UUID)
+  @_Concurrency.MainActor final public func registerPlayer(_ player: AVFoundation.AVPlayer, delegate: any AVFoundation.AVPlayerPlaybackCoordinatorDelegate)
+  @_Concurrency.MainActor final public func handleAttachmentUpdates(for attachments: _RealityKit_SwiftUI.RealityViewAttachments, roles: [Swift.String : ImmersiveWatchPartyCore.AttachmentRole]) -> _Concurrency.Task<Swift.Void, Swift.Never>
+  @_Concurrency.MainActor final public func getTransform(for role: ImmersiveWatchPartyCore.AttachmentRole) async -> RealityFoundation.Transform
+  @_Concurrency.MainActor final public func subscribeToTransformUpdates(for entity: RealityFoundation.Entity, role: ImmersiveWatchPartyCore.AttachmentRole) -> _Concurrency.Task<Swift.Void, Swift.Never>
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor final public func startSessionMonitoring<A>(realActivity: A.Type, mockActivity: A.Type?, useMockSharePlay: Swift.Bool) where A : GroupActivities.GroupActivity
+  #endif
+  @_Concurrency.MainActor final public func cleanup()
+  @_Concurrency.MainActor final public func leaveSharePlay()
+  @_Concurrency.MainActor final public func endSharePlay()
+  @_Concurrency.MainActor final public func setupSession<A>(session: GroupActivities.GroupSession<A>) where A : GroupActivities.GroupActivity
+  @_Concurrency.MainActor final public func setupMockSession(session: Any, messenger: Any, sessionID: Foundation.UUID, isHost: Swift.Bool, participantCount: Swift.Int = 1, senderAdapter: any ImmersiveWatchPartyCore.MessageSender, receiverAdapter: any ImmersiveWatchPartyCore.MessageReceiver)
+  @_Concurrency.MainActor final public func updateParticipants(_ participantUUIDs: Swift.Set<Foundation.UUID>)
+  @_Concurrency.MainActor final public func handleSessionStateChange(isInvalidated: Swift.Bool)
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+extension ImmersiveWatchPartyCore.ImmersiveWatchPartyManager : ImmersiveWatchPartyCore.SystemCoordinatorDelegate {
+  @_Concurrency.MainActor final public func groupImmersiveSpaceDidOpen(style: any SwiftUI.ImmersionStyle)
+  @_Concurrency.MainActor final public func groupImmersiveSpaceDidClose()
+  @_Concurrency.MainActor final public func systemCoordinatorDidBecomeReady()
+}
+extension ImmersiveWatchPartyCore.ImmersiveWatchPartyManager : ImmersiveWatchPartyCore.ParticipantTrackerDelegate {
+  @_Concurrency.MainActor final public func participantDidJoin(count: Swift.Int, previousCount: Swift.Int)
+  @_Concurrency.MainActor final public func activeParticipantUUIDsDidChange(_ activeUUIDs: Swift.Set<Foundation.UUID>)
+}
+public enum JoinFailureReason {
+  case participantLimitExceeded
+  case sessionTimeLimitExceeded
+  case activationRequired
+  public static func == (a: ImmersiveWatchPartyCore.JoinFailureReason, b: ImmersiveWatchPartyCore.JoinFailureReason) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_Concurrency.MainActor public protocol ImmersiveWatchPartyDelegate : AnyObject {
+  @_Concurrency.MainActor func sessionManager(_ manager: ImmersiveWatchPartyCore.ImmersiveWatchPartyManager, received activity: some GroupActivity) async -> Swift.Bool
+  @_Concurrency.MainActor func sessionManagerDidBecomeReady(_ manager: ImmersiveWatchPartyCore.ImmersiveWatchPartyManager)
+  @_Concurrency.MainActor func sessionManager(_ manager: ImmersiveWatchPartyCore.ImmersiveWatchPartyManager, didHostSession sessionId: Swift.String)
+  @_Concurrency.MainActor func sessionManager(_ manager: ImmersiveWatchPartyCore.ImmersiveWatchPartyManager, participantDidJoin participantUUID: Foundation.UUID)
+  @_Concurrency.MainActor func sessionManager(_ manager: ImmersiveWatchPartyCore.ImmersiveWatchPartyManager, participantDidLeave participantUUID: Foundation.UUID)
+  @_Concurrency.MainActor func sessionManagerDidInvalidate(_ manager: ImmersiveWatchPartyCore.ImmersiveWatchPartyManager)
+  @_Concurrency.MainActor func sessionManager(_ manager: ImmersiveWatchPartyCore.ImmersiveWatchPartyManager, didFailToJoin reason: ImmersiveWatchPartyCore.JoinFailureReason)
+}
+@_Concurrency.MainActor public enum MessageAdapters {
+  @_Concurrency.MainActor public static func createRealSender(messenger: GroupActivities.GroupSessionMessenger) -> any ImmersiveWatchPartyCore.MessageSender
+  @_Concurrency.MainActor public static func createRealReceiver(messenger: GroupActivities.GroupSessionMessenger) -> any ImmersiveWatchPartyCore.MessageReceiver
+}
+@_Concurrency.MainActor public protocol SystemCoordinatorDelegate : AnyObject {
+  @_Concurrency.MainActor func groupImmersiveSpaceDidOpen(style: any SwiftUI.ImmersionStyle)
+  @_Concurrency.MainActor func groupImmersiveSpaceDidClose()
+  @_Concurrency.MainActor func systemCoordinatorDidBecomeReady()
+}
+@_Concurrency.MainActor public class SystemCoordinatorManager {
+  @_Concurrency.MainActor public var systemCoordinator: GroupActivities.SystemCoordinator? {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor public init(delegate: (any ImmersiveWatchPartyCore.SystemCoordinatorDelegate)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor public func configure(for session: GroupActivities.GroupSession<some GroupActivity>, spatialTemplate: GroupActivities.SpatialTemplatePreference = .sideBySide, onReady: (nonisolated(nonsending) @Sendable () async -> Swift.Void)? = nil)
+  #endif
+  @_Concurrency.MainActor public func cleanup()
+  @objc deinit
+}
+extension SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public func coordinateSharePlay(partyManager: ImmersiveWatchPartyCore.ImmersiveWatchPartyManager, player: AVFoundation.AVPlayer, delegate: any AVFoundation.AVPlayerPlaybackCoordinatorDelegate) -> some SwiftUICore.View
+  
+}
+final public class SharePlayMessenger : @unchecked Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(messageManager: ImmersiveWatchPartyCore.MessageManager?)
+  #endif
+  @_Concurrency.MainActor final public func send<T>(_ message: T) async throws where T : Swift.Decodable, T : Swift.Encodable
+  @objc deinit
+}
+public enum SharePlayError : Swift.Error {
+  case messengerNotAvailable
+  public static func == (a: ImmersiveWatchPartyCore.SharePlayError, b: ImmersiveWatchPartyCore.SharePlayError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public func onSharePlayMessage<T>(of type: T.Type, handler: @escaping @_Concurrency.MainActor @Sendable (T) -> Swift.Void) -> some SwiftUICore.View where T : Swift.Decodable, T : Swift.Encodable, T : Swift.Equatable
+  
+}
+@_Concurrency.MainActor public enum ImmersiveWatchParty {
+  @_Concurrency.MainActor public static func activate(withLicenseKey key: Swift.String)
+}
+extension SwiftUICore.EnvironmentValues {
+  public var sharePlayMessenger: ImmersiveWatchPartyCore.SharePlayMessenger {
+    get
+    set
+  }
+}
+public enum AttachmentRole {
+  case controlPanel
+  case notification
+  case custom(position: Swift.SIMD3<Swift.Float>, rotation: simd.simd_quatf?)
+}
+extension simd.simd_quatf {
+  public static func degrees(_ angle: Swift.Float, axis: Swift.SIMD3<Swift.Float>) -> simd.simd_quatf
+}
+@_hasMissingDesignatedInitializers @_Concurrency.MainActor public class PlaybackCoordinatorManager {
+  @_Concurrency.MainActor public static func coordinate(player: AVFoundation.AVPlayer, with session: GroupActivities.GroupSession<some GroupActivity>, delegate: any AVFoundation.AVPlayerPlaybackCoordinatorDelegate)
+  @objc deinit
+}
+public protocol IdentifiableMessage {
+  var senderUUID: Foundation.UUID { get }
+}
+public struct MessageListenerToken : Swift.Hashable {
+  public init(id: Foundation.UUID = UUID())
+  public static func == (a: ImmersiveWatchPartyCore.MessageListenerToken, b: ImmersiveWatchPartyCore.MessageListenerToken) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_Concurrency.MainActor public protocol MessageSender {
+  @_Concurrency.MainActor func send<T>(_ message: T) async throws where T : Swift.Decodable, T : Swift.Encodable
+}
+@_Concurrency.MainActor public protocol MessageReceiver {
+  @_Concurrency.MainActor func messages<T>(of type: T.Type) -> _Concurrency.AsyncStream<(T, Any)> where T : Swift.Decodable, T : Swift.Encodable, T : Swift.Equatable
+}
+@_Concurrency.MainActor public protocol MessageManagerProtocol {
+  @_Concurrency.MainActor func send<T>(_ message: T) async throws where T : Swift.Decodable, T : Swift.Encodable
+  @_Concurrency.MainActor func listen<T>(for type: T.Type, handler: @escaping @_Concurrency.MainActor @Sendable (T) -> Swift.Void) -> ImmersiveWatchPartyCore.MessageListenerToken where T : Swift.Decodable, T : Swift.Encodable, T : Swift.Equatable
+  @_Concurrency.MainActor func stopListening(_ token: ImmersiveWatchPartyCore.MessageListenerToken)
+  @_Concurrency.MainActor func cleanup()
+}
+@_Concurrency.MainActor public class MessageManager : ImmersiveWatchPartyCore.MessageManagerProtocol {
+  @_Concurrency.MainActor public var onMessageReceived: ((Swift.String) -> Swift.Void)?
+  @_Concurrency.MainActor public var onMessageSent: ((Swift.String) -> Swift.Void)?
+  @_Concurrency.MainActor public init(localUUID: Foundation.UUID)
+  @_Concurrency.MainActor public func setSender(_ sender: any ImmersiveWatchPartyCore.MessageSender)
+  @_Concurrency.MainActor public func setReceiver(_ receiver: any ImmersiveWatchPartyCore.MessageReceiver)
+  @_Concurrency.MainActor public func send<T>(_ message: T) async throws where T : Swift.Decodable, T : Swift.Encodable
+  @_Concurrency.MainActor public func listen<T>(for type: T.Type, handler: @escaping @_Concurrency.MainActor @Sendable (T) -> Swift.Void) -> ImmersiveWatchPartyCore.MessageListenerToken where T : Swift.Decodable, T : Swift.Encodable, T : Swift.Equatable
+  @_Concurrency.MainActor public func stopListening(_ token: ImmersiveWatchPartyCore.MessageListenerToken)
+  @_Concurrency.MainActor public func cleanup()
+  @objc deinit
+}
+public protocol ParticipantIdentifiable {
+  var id: Foundation.UUID { get }
+}
+@_Concurrency.MainActor public protocol ParticipantTrackerDelegate : AnyObject {
+  @_Concurrency.MainActor func participantDidJoin(count: Swift.Int, previousCount: Swift.Int)
+  @_Concurrency.MainActor func activeParticipantUUIDsDidChange(_ activeUUIDs: Swift.Set<Foundation.UUID>)
+}
+@_Concurrency.MainActor public class ParticipantTracker {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor public init(delegate: (any ImmersiveWatchPartyCore.ParticipantTrackerDelegate)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor public func setDelegate(_ delegate: (any ImmersiveWatchPartyCore.ParticipantTrackerDelegate)?)
+  #endif
+  @_Concurrency.MainActor public func observe<P, Pub>(_ publisher: Pub) where P : ImmersiveWatchPartyCore.ParticipantIdentifiable, P : Swift.Hashable, Pub : Combine.Publisher, Pub.Failure == Swift.Never, Pub.Output == Swift.Set<P>
+  @_Concurrency.MainActor public func resetCount()
+  @_Concurrency.MainActor public func setInitialCount(_ count: Swift.Int)
+  @_Concurrency.MainActor public func updateFromUUIDs(_ participantUUIDs: Swift.Set<Foundation.UUID>)
+  @_Concurrency.MainActor public func cleanup()
+  @objc deinit
+}
+extension ImmersiveWatchPartyCore.ImmersiveWatchPartyManager : Swift.Sendable {}
+extension ImmersiveWatchPartyCore.JoinFailureReason : Swift.Equatable {}
+extension ImmersiveWatchPartyCore.JoinFailureReason : Swift.Hashable {}
+extension ImmersiveWatchPartyCore.MessageAdapters : Swift.Sendable {}
+extension ImmersiveWatchPartyCore.SystemCoordinatorManager : Swift.Sendable {}
+extension ImmersiveWatchPartyCore.SharePlayError : Swift.Equatable {}
+extension ImmersiveWatchPartyCore.SharePlayError : Swift.Hashable {}
+extension ImmersiveWatchPartyCore.ImmersiveWatchParty : Swift.Sendable {}
+extension ImmersiveWatchPartyCore.PlaybackCoordinatorManager : Swift.Sendable {}
+extension ImmersiveWatchPartyCore.MessageManager : Swift.Sendable {}
+extension ImmersiveWatchPartyCore.ParticipantTracker : Swift.Sendable {}
