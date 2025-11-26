@@ -65,5 +65,10 @@ This Agreement is effective until terminated. Your rights under this Agreement w
 
 ---
 
+### 9. DEVELOPMENT STATUS
+The SDK is provided "AS IS." Please acknowledge that development is subject to time constraints. The Licensor is not liable for any bugs, delays, or lack of immediate support resulting from these constraints.
+
+---
+
 **For Enterprise Licensing or Field of Use Exemptions:**
 Contact: juyoungkim@vantage-official.com (Subject: Enterprise Licensing)

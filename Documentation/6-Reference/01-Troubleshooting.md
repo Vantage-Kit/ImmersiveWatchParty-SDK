@@ -403,6 +403,27 @@ See section 5.3 for complete implementation.
 
 ### Video Sync Issues
 
+#### Spatial Personas Not Visible / "Floating Window" Issue
+
+**Symptom**: Video plays and syncs, but Spatial Personas disappear or fade out when the video starts. The video might appear in a "Cinema Window" rather than as a 3D object.
+
+**Cause**: Using `AVPlayerViewController` or SwiftUI `VideoPlayer` in an Immersive Space. These system components enforce a dedicated rendering mode that isolates the user from shared spatial content.
+
+**Solution**: Switch to a RealityKit-based rendering pipeline:
+
+1. Create a `MeshResource` (Plane or Sphere).
+2. Create a `VideoMaterial` using your `AVPlayer`.
+3. Apply it to a `ModelEntity`.
+
+```swift
+// ❌ Don't use this in ImmersiveWatchParty
+VideoPlayer(player: player)
+
+// ✅ Use this (RealityKit)
+let videoMaterial = VideoMaterial(avPlayer: player)
+let screen = ModelEntity(mesh: .generatePlane(...), materials: [videoMaterial])
+```
+
 #### Video Plays But Not Synced Across Devices
 
 **Cause**: Player not registered with coordination

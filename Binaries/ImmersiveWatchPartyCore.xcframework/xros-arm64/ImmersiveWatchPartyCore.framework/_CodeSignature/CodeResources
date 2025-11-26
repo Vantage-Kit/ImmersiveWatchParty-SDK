@@ -10,11 +10,11 @@
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros.abi.json</key>
 		<data>
-		SWqVw4I/gRbDmDAyoLmnz6tXMnA=
+		k5PYKc6Txr87X6GIYNwK/2/dtQI=
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros.private.swiftinterface</key>
 		<data>
-		F8DvJdUNWTgfbWhkLFDzYIe+8dE=
+		/xnPS6TlBc+EFrOb/qs1+ULD5/I=
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros.swiftdoc</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros.swiftinterface</key>
 		<data>
-		F8DvJdUNWTgfbWhkLFDzYIe+8dE=
+		/xnPS6TlBc+EFrOb/qs1+ULD5/I=
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros.swiftmodule</key>
 		<data>
-		uncEHi++FlqriqM4wiaFbniFYSQ=
+		khoj5KaljWSIqbChdMGaXfglgAI=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -35,14 +35,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZXoK7cniBglWN/cXu+5ACtZnUXkH7nCqBh63/PeDoZI=
+			pSetZdlrja86idfaTfgabGGyZkEXkFGVCV35iE/gAV4=
 			</data>
 		</dict>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DSFZBxPfucMS7dE7NGb/xfKAn1El/A8NSlPWiiNcVo8=
+			9Fc/UbigxUwKti6IVsELg6tR59lIbtahwQNYYfni3mE=
 			</data>
 		</dict>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros.swiftdoc</key>
@@ -56,14 +56,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DSFZBxPfucMS7dE7NGb/xfKAn1El/A8NSlPWiiNcVo8=
+			9Fc/UbigxUwKti6IVsELg6tR59lIbtahwQNYYfni3mE=
 			</data>
 		</dict>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Cvvg7vluRSQDTBn8oMEKiraAluzI9u12ZqtIQZxopFA=
+			GFecIYlx8KSCLlWmwITO6VF+Fl4fdgcaQix8pVDXp1g=
 			</data>
 		</dict>
 	</dict>

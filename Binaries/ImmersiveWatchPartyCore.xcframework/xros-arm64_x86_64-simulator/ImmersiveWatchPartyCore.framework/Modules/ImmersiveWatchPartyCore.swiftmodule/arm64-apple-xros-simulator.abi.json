@@ -1961,6 +1961,204 @@
             ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sessionManagerDidBecomeReady",
+            "printedName": "sessionManagerDidBecomeReady(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ImmersiveWatchPartyManager",
+                "printedName": "ImmersiveWatchPartyCore.ImmersiveWatchPartyManager",
+                "usr": "s:23ImmersiveWatchPartyCore0abC7ManagerC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23ImmersiveWatchPartyCore0abC8DelegatePAAE28sessionManagerDidBecomeReadyyyAA0abcG0CF",
+            "mangledName": "$s23ImmersiveWatchPartyCore0abC8DelegatePAAE28sessionManagerDidBecomeReadyyyAA0abcG0CF",
+            "moduleName": "ImmersiveWatchPartyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : ImmersiveWatchPartyCore.ImmersiveWatchPartyDelegate>",
+            "sugared_genericSig": "<Self where Self : ImmersiveWatchPartyCore.ImmersiveWatchPartyDelegate>",
+            "declAttributes": [
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sessionManager",
+            "printedName": "sessionManager(_:didHostSession:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ImmersiveWatchPartyManager",
+                "printedName": "ImmersiveWatchPartyCore.ImmersiveWatchPartyManager",
+                "usr": "s:23ImmersiveWatchPartyCore0abC7ManagerC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23ImmersiveWatchPartyCore0abC8DelegatePAAE14sessionManager_14didHostSessionyAA0abcG0C_SStF",
+            "mangledName": "$s23ImmersiveWatchPartyCore0abC8DelegatePAAE14sessionManager_14didHostSessionyAA0abcG0C_SStF",
+            "moduleName": "ImmersiveWatchPartyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : ImmersiveWatchPartyCore.ImmersiveWatchPartyDelegate>",
+            "sugared_genericSig": "<Self where Self : ImmersiveWatchPartyCore.ImmersiveWatchPartyDelegate>",
+            "declAttributes": [
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sessionManager",
+            "printedName": "sessionManager(_:participantDidJoin:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ImmersiveWatchPartyManager",
+                "printedName": "ImmersiveWatchPartyCore.ImmersiveWatchPartyManager",
+                "usr": "s:23ImmersiveWatchPartyCore0abC7ManagerC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23ImmersiveWatchPartyCore0abC8DelegatePAAE14sessionManager_18participantDidJoinyAA0abcG0C_10Foundation4UUIDVtF",
+            "mangledName": "$s23ImmersiveWatchPartyCore0abC8DelegatePAAE14sessionManager_18participantDidJoinyAA0abcG0C_10Foundation4UUIDVtF",
+            "moduleName": "ImmersiveWatchPartyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : ImmersiveWatchPartyCore.ImmersiveWatchPartyDelegate>",
+            "sugared_genericSig": "<Self where Self : ImmersiveWatchPartyCore.ImmersiveWatchPartyDelegate>",
+            "declAttributes": [
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sessionManager",
+            "printedName": "sessionManager(_:participantDidLeave:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ImmersiveWatchPartyManager",
+                "printedName": "ImmersiveWatchPartyCore.ImmersiveWatchPartyManager",
+                "usr": "s:23ImmersiveWatchPartyCore0abC7ManagerC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23ImmersiveWatchPartyCore0abC8DelegatePAAE14sessionManager_19participantDidLeaveyAA0abcG0C_10Foundation4UUIDVtF",
+            "mangledName": "$s23ImmersiveWatchPartyCore0abC8DelegatePAAE14sessionManager_19participantDidLeaveyAA0abcG0C_10Foundation4UUIDVtF",
+            "moduleName": "ImmersiveWatchPartyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : ImmersiveWatchPartyCore.ImmersiveWatchPartyDelegate>",
+            "sugared_genericSig": "<Self where Self : ImmersiveWatchPartyCore.ImmersiveWatchPartyDelegate>",
+            "declAttributes": [
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sessionManagerDidInvalidate",
+            "printedName": "sessionManagerDidInvalidate(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ImmersiveWatchPartyManager",
+                "printedName": "ImmersiveWatchPartyCore.ImmersiveWatchPartyManager",
+                "usr": "s:23ImmersiveWatchPartyCore0abC7ManagerC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23ImmersiveWatchPartyCore0abC8DelegatePAAE27sessionManagerDidInvalidateyyAA0abcG0CF",
+            "mangledName": "$s23ImmersiveWatchPartyCore0abC8DelegatePAAE27sessionManagerDidInvalidateyyAA0abcG0CF",
+            "moduleName": "ImmersiveWatchPartyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : ImmersiveWatchPartyCore.ImmersiveWatchPartyDelegate>",
+            "sugared_genericSig": "<Self where Self : ImmersiveWatchPartyCore.ImmersiveWatchPartyDelegate>",
+            "declAttributes": [
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sessionManager",
+            "printedName": "sessionManager(_:didFailToJoin:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ImmersiveWatchPartyManager",
+                "printedName": "ImmersiveWatchPartyCore.ImmersiveWatchPartyManager",
+                "usr": "s:23ImmersiveWatchPartyCore0abC7ManagerC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "JoinFailureReason",
+                "printedName": "ImmersiveWatchPartyCore.JoinFailureReason",
+                "usr": "s:23ImmersiveWatchPartyCore17JoinFailureReasonO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23ImmersiveWatchPartyCore0abC8DelegatePAAE14sessionManager_13didFailToJoinyAA0abcG0C_AA0K13FailureReasonOtF",
+            "mangledName": "$s23ImmersiveWatchPartyCore0abC8DelegatePAAE14sessionManager_13didFailToJoinyAA0abcG0C_AA0K13FailureReasonOtF",
+            "moduleName": "ImmersiveWatchPartyCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : ImmersiveWatchPartyCore.ImmersiveWatchPartyDelegate>",
+            "sugared_genericSig": "<Self where Self : ImmersiveWatchPartyCore.ImmersiveWatchPartyDelegate>",
+            "declAttributes": [
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Protocol",

@@ -15,7 +15,7 @@ Add the package to your Xcode project:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/your-org/ImmersiveWatchParty", from: "1.0.0")
+    .package(url: "https://github.com/Vantage-Kit/ImmersiveWatchParty-SDK", from: "1.0.0")
 ],
 targets: [
     .target(

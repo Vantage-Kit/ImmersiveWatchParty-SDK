@@ -10,11 +10,11 @@
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros-simulator.abi.json</key>
 		<data>
-		SWqVw4I/gRbDmDAyoLmnz6tXMnA=
+		k5PYKc6Txr87X6GIYNwK/2/dtQI=
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
-		gGTEr4qOe31pHo3DnZmJUpC7LNA=
+		w19Fb2XgtkD2dufp1Iiemq0SB8g=
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros-simulator.swiftdoc</key>
 		<data>
@@ -22,19 +22,19 @@
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros-simulator.swiftinterface</key>
 		<data>
-		gGTEr4qOe31pHo3DnZmJUpC7LNA=
+		w19Fb2XgtkD2dufp1Iiemq0SB8g=
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros-simulator.swiftmodule</key>
 		<data>
-		91gXTjQRGLilWvNbPH5HKf826l4=
+		Uf5cmE9rXOIxsCVaiOFa/bm/xSk=
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.abi.json</key>
 		<data>
-		SWqVw4I/gRbDmDAyoLmnz6tXMnA=
+		k5PYKc6Txr87X6GIYNwK/2/dtQI=
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
-		4GixWzBE088UF+aChoY1pLPsFMg=
+		+HaqJbpEyCtXbsZgcYGX6aMQhGI=
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.swiftdoc</key>
 		<data>
@@ -42,11 +42,11 @@
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.swiftinterface</key>
 		<data>
-		4GixWzBE088UF+aChoY1pLPsFMg=
+		+HaqJbpEyCtXbsZgcYGX6aMQhGI=
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.swiftmodule</key>
 		<data>
-		Ro4MuuXB00sivUnp7xVsrFmJRBA=
+		bv8pN0TI5bYi8195oIetWwiR0bs=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -55,14 +55,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZXoK7cniBglWN/cXu+5ACtZnUXkH7nCqBh63/PeDoZI=
+			pSetZdlrja86idfaTfgabGGyZkEXkFGVCV35iE/gAV4=
 			</data>
 		</dict>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aq/BD8UWmog28npzlZepIfYnEwNMhbXxd5/QfcAteKk=
+			Rij/KzwNJBu9m1LUoEevK4a9HE8Vpk70gDOFflK8Ttk=
 			</data>
 		</dict>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros-simulator.swiftdoc</key>
@@ -76,28 +76,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aq/BD8UWmog28npzlZepIfYnEwNMhbXxd5/QfcAteKk=
+			Rij/KzwNJBu9m1LUoEevK4a9HE8Vpk70gDOFflK8Ttk=
 			</data>
 		</dict>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BPPHrW6yLmhlYlE4D7eiAi2bIDub8/YjWWJybjO+8nk=
+			qMHjtwTu+KG15KHIIENokxrFyswMjMVryc1yhgIkNu4=
 			</data>
 		</dict>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZXoK7cniBglWN/cXu+5ACtZnUXkH7nCqBh63/PeDoZI=
+			pSetZdlrja86idfaTfgabGGyZkEXkFGVCV35iE/gAV4=
 			</data>
 		</dict>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			r3mfmPGCj6uWYUc9eZFezYYg0uL0C5EI7Nz442zuiQQ=
+			Suf12v4Lwi7792APNVtHBN1K2F3Te50ECjcb/+SrrNI=
 			</data>
 		</dict>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.swiftdoc</key>
@@ -111,14 +111,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			r3mfmPGCj6uWYUc9eZFezYYg0uL0C5EI7Nz442zuiQQ=
+			Suf12v4Lwi7792APNVtHBN1K2F3Te50ECjcb/+SrrNI=
 			</data>
 		</dict>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y7lT3chhAGeFkO2L/kjdIpgP9/zFZecpsRkSFczBTu0=
+			KUM+szPl9+gL+GShvq6TbZf40tFoaosIUMxjCTjrDgk=
 			</data>
 		</dict>
 	</dict>

@@ -4,6 +4,12 @@
 
 **⚠️ IMPORTANT**: Most production apps wrap `AVPlayer` in custom classes. This section covers integrating SharePlay with wrapped players.
 
+> **⚠️ Architectural Requirement: RealityKit Rendering**
+>
+> If your existing custom player wrapper uses `AVPlayerViewController` or SwiftUI `VideoPlayer`, you must modify it for immersive watch parties.
+>
+> To maintain shared coordinate space with Spatial Personas, you cannot use the system's high-level player views. Your wrapper must expose the underlying `AVPlayer` instance so it can be assigned to a RealityKit `VideoMaterial` on a 3D mesh.
+
 ### 9.1 The Challenge
 
 The guide assumes direct access to `AVPlayer`, but real apps often use:

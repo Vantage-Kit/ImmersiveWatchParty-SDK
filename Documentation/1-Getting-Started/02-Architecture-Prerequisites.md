@@ -92,7 +92,7 @@ This package works best with:
 - **@Observable** or **@ObservableObject** app state
 - **AVPlayer** for video playback (not custom players)
 - **RealityKit** for immersive content positioning
-- **visionOS 1.0+** (some features require visionOS 2.0+)
+- **visionOS 26.0+**
 
 ### 2.4 Architecture Assumptions
 

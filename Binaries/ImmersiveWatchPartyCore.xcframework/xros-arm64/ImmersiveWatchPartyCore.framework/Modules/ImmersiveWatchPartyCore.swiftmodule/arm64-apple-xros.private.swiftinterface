@@ -95,6 +95,14 @@ public enum JoinFailureReason {
   @_Concurrency.MainActor func sessionManagerDidInvalidate(_ manager: ImmersiveWatchPartyCore.ImmersiveWatchPartyManager)
   @_Concurrency.MainActor func sessionManager(_ manager: ImmersiveWatchPartyCore.ImmersiveWatchPartyManager, didFailToJoin reason: ImmersiveWatchPartyCore.JoinFailureReason)
 }
+extension ImmersiveWatchPartyCore.ImmersiveWatchPartyDelegate {
+  @_Concurrency.MainActor public func sessionManagerDidBecomeReady(_ manager: ImmersiveWatchPartyCore.ImmersiveWatchPartyManager)
+  @_Concurrency.MainActor public func sessionManager(_ manager: ImmersiveWatchPartyCore.ImmersiveWatchPartyManager, didHostSession sessionId: Swift.String)
+  @_Concurrency.MainActor public func sessionManager(_ manager: ImmersiveWatchPartyCore.ImmersiveWatchPartyManager, participantDidJoin participantUUID: Foundation.UUID)
+  @_Concurrency.MainActor public func sessionManager(_ manager: ImmersiveWatchPartyCore.ImmersiveWatchPartyManager, participantDidLeave participantUUID: Foundation.UUID)
+  @_Concurrency.MainActor public func sessionManagerDidInvalidate(_ manager: ImmersiveWatchPartyCore.ImmersiveWatchPartyManager)
+  @_Concurrency.MainActor public func sessionManager(_ manager: ImmersiveWatchPartyCore.ImmersiveWatchPartyManager, didFailToJoin reason: ImmersiveWatchPartyCore.JoinFailureReason)
+}
 @_Concurrency.MainActor public enum MessageAdapters {
   @_Concurrency.MainActor public static func createRealSender(messenger: GroupActivities.GroupSessionMessenger) -> any ImmersiveWatchPartyCore.MessageSender
   @_Concurrency.MainActor public static func createRealReceiver(messenger: GroupActivities.GroupSessionMessenger) -> any ImmersiveWatchPartyCore.MessageReceiver

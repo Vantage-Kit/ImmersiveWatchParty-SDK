@@ -19,7 +19,7 @@
 
 ## 📚 Documentation
 
-Full integration guides, architectural diagrams, and API references are available in the **[Documentation Directory](Documentation/README.md)**.
+Full integration guides, architectural diagrams, and API references are available in the **[Documentation Directory](Documentation/ImmersiveWatchParty_README.md)**.
 
 * **[Getting Started](Documentation/1-Getting-Started/)**: Installation & Prerequisites.
 * **[Core Integration](Documentation/2-Core-Integration/)**: Lifecycle, Player Sync, and Space Coordination.

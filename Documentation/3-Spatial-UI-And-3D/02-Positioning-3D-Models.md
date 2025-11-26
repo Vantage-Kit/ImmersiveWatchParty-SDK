@@ -207,7 +207,7 @@ struct ImmersiveView: View {
 
 4. **Solo Mode Support**: Both methods work correctly in solo mode (no SharePlay session), positioning relative to the origin.
 
-5. **visionOS Version Support**: Both methods handle visionOS 1.0 and 2.0+ differences automatically.
+5. **visionOS Version Support**: Works with 26.0+.
 
 #### Troubleshooting 3D Model Positioning
 

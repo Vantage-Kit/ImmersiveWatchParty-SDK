@@ -13,7 +13,7 @@ struct ImmersiveVideoView: View {
     @Environment(AppState.self) private var appState
     @Binding var videoPlayer: VideoPlayer  // Your custom player wrapper
 
-var body: some View {
+    var body: some View {
         RealityView { content, attachments in
             // Your RealityKit content
         } attachments: {
@@ -33,20 +33,33 @@ var body: some View {
 
 **Method 2: Manual Registration**
 
+> **Architectural Note**: To ensure correct coordinate space synchronization with Spatial Personas, this SDK is designed for RealityKit. We recommend rendering video using VideoMaterial on a ModelEntity rather than using high-level SwiftUI player views.
+
 ```swift
 struct VideoPlayerView: View, AVPlayerPlaybackCoordinatorDelegate {
     @Environment(AppState.self) private var appState
     let player: AVPlayer
 
     var body: some View {
-        VideoPlayer(player: player)
-            .onAppear {
-                // Register player for SharePlay coordination
-                appState.sharePlayManager.registerPlayer(
-                    player,
-                    delegate: self
-                )
-            }
+        RealityView { content in
+            let root = Entity()
+            content.add(root)
+            
+            // Create a screen mesh (16:9 aspect ratio)
+            let screenMesh = MeshResource.generatePlane(width: 1.6, height: 0.9)
+            
+            // Create video material
+            let videoMaterial = VideoMaterial(avPlayer: player)
+            let screenEntity = ModelEntity(mesh: screenMesh, materials: [videoMaterial])
+            root.addChild(screenEntity)
+        }
+        .onAppear {
+            // Register player for SharePlay coordination
+            appState.sharePlayManager.registerPlayer(
+                player,
+                delegate: self
+            )
+        }
     }
 
     // OPTIONAL: Implement delegate methods for notifications

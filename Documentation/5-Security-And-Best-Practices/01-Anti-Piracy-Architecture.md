@@ -4,7 +4,7 @@
 
 **THE PROBLEM: Client-Side Delegate Patching**
 
-SharePlay's trust-based architecture exposes a fundamental vulnerability that your package **cannot** fix. A malicious user can patch your customer's app to bypass content paywalls and access paid content for free via SharePlay.
+SharePlay's trust-based architecture exposes a fundamental vulnerability that this package **cannot** fix. A malicious user can patch your customer's app to bypass content paywalls and access paid content for free via SharePlay.
 
 #### The Vulnerability
 
@@ -12,7 +12,7 @@ The SharePlay flow:
 
 1. **Host** (paid user) starts a SharePlay session with `WatchTogetherActivity(videoID: "premium_content")`
 2. **Client** (free user) receives the activity
-3. Your package calls the **client app's** `sessionManager(received:)` delegate method
+3. This package calls the **client app's** `sessionManager(received:)` delegate method
 4. The delegate is supposed to verify purchase and return `false` if unauthorized
 5. **Attack**: Malicious user patches their app to always return `true`
 
@@ -83,7 +83,7 @@ This is the "Netflix password sharing" problem, but worse—the host doesn't eve
 
 #### The Solution: Server-Side Authentication
 
-**⚠️ YOUR PACKAGE CANNOT FIX THIS.** The security must be in your customer's backend server.
+**⚠️ THIS PACKAGE CANNOT FIX THIS.** The security must be in your customer's backend server.
 
 **Three-Step Defense:**
 
@@ -233,7 +233,7 @@ let watermarkedURL = cdn.generateWatermarkedURL(
 )
 ```
 
-#### What Your Package Provides vs. What You Must Provide
+#### What This Package Provides vs. What You Must Provide
 
 **ImmersiveWatchParty provides:**
 
@@ -263,7 +263,7 @@ let watermarkedURL = cdn.generateWatermarkedURL(
 - [ ] Consider watermarking to identify pirated copies
 - [ ] Monitor for suspicious patterns (one host, many joiners)
 
-**Remember**: Your package provides the "handshake" mechanism. It is your application's responsibility to check the "ID at the door." Server-side authentication is the ONLY way to prevent SharePlay piracy.
+**Remember**: This package provides the "handshake" mechanism. It is your application's responsibility to check the "ID at the door." Server-side authentication is the ONLY way to prevent SharePlay piracy.
 
 ---
 

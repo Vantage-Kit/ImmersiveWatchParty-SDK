@@ -10,8 +10,8 @@ This guide will get you up and running quickly with a complete working example. 
 
 **Free Tier (Default)**: The package works out of the box with no activation required. Free Tier includes:
 
-- Maximum 2 participants
-- 5-minute session limit
+- Up to 5 Spatial Participants (capped by FaceTime itself)
+- No time limit
 - Full immersive capabilities
 
 **Pro/Enterprise Tiers**: License activation is required to unlock unlimited participants and session duration.
@@ -53,7 +53,7 @@ If you need more participants or longer sessions, see the activation instruction
 The package operates in three tiers:
 
 **Free Tier** (no license key or activation required):
-
+<!-- 
 - Maximum 2 participants
 - 5-minute session limit
 - Full immersive capabilities
@@ -65,7 +65,7 @@ The package operates in three tiers:
 - ✅ Unlimited session duration
 - ✅ Perpetual license with 1 year of updates
 - ✅ Full immersive capabilities
-- ✅ **Licensed per bundle ID** - unlimited developers can use the same key for your app
+- ✅ **Licensed per bundle ID** - unlimited developers can use the same key for your app -->
 
 **Enterprise Tier** (per-app annual subscription):
 
@@ -275,7 +275,7 @@ When you call `activate(withLicenseKey:)`, the package:
 - No network connection required for validation
 - One license covers unlimited developers working on the same app
 
-**Free Tier Enforcement:**
+<!-- **Free Tier Enforcement:**
 
 If you don't activate a license or activation fails, the package runs in Free tier mode with these limits:
 
@@ -294,7 +294,7 @@ If you don't activate a license or activation fails, the package runs in Free ti
 With a valid license, these limits are removed and you get:
 
 - ✅ Unlimited participants (tested with 10+)
-- ✅ Unlimited session duration (hours of continuous use)
+- ✅ Unlimited session duration (hours of continuous use) -->
 
 ### Troubleshooting License Activation
 
@@ -543,6 +543,18 @@ struct TheaterView: View, AVPlayerPlaybackCoordinatorDelegate {
             let root = Entity()
             content.add(root)
 
+            // Create a screen mesh (16:9 aspect ratio)
+            let screenMesh = MeshResource.generatePlane(width: 1.6, height: 0.9)
+            
+            // Create video material if player exists
+            if let player = appState.player {
+                // NOTE: We use VideoMaterial (RealityKit) instead of AVPlayerViewController
+                // to ensure Spatial Personas remain visible in the shared space.
+                let videoMaterial = VideoMaterial(avPlayer: player)
+                let screenEntity = ModelEntity(mesh: screenMesh, materials: [videoMaterial])
+                root.addChild(screenEntity)
+            }
+
             // Start attachment positioning
             updateTask = appState.sharePlayManager.handleAttachmentUpdates(
                 for: attachments,
@@ -551,9 +563,17 @@ struct TheaterView: View, AVPlayerPlaybackCoordinatorDelegate {
 
         } attachments: {
             Attachment(id: "controls") {
-                if let player = appState.player {
-                    VideoPlayer(player: player)
-                        .frame(width: 800, height: 450)
+                // Controls overlay (play/pause, etc)
+                // Note: We don't use VideoPlayer here to ensure
+                // proper immersive rendering with personas
+                VStack {
+                    if let player = appState.player {
+                        // Custom controls would go here
+                        Text("Now Playing")
+                            .font(.caption)
+                            .padding()
+                            .glassBackgroundEffect()
+                    }
                 }
             }
         }
