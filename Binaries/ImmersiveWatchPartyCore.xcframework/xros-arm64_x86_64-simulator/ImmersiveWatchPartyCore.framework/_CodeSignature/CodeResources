@@ -10,7 +10,7 @@
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros-simulator.abi.json</key>
 		<data>
-		k5PYKc6Txr87X6GIYNwK/2/dtQI=
+		28BG2Tq/y1rZxjgjlEuHUDJDkFM=
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
@@ -26,11 +26,11 @@
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros-simulator.swiftmodule</key>
 		<data>
-		Uf5cmE9rXOIxsCVaiOFa/bm/xSk=
+		pr9ih3JG+zVkpahimje7TeVJMmM=
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.abi.json</key>
 		<data>
-		k5PYKc6Txr87X6GIYNwK/2/dtQI=
+		28BG2Tq/y1rZxjgjlEuHUDJDkFM=
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.swiftmodule</key>
 		<data>
-		bv8pN0TI5bYi8195oIetWwiR0bs=
+		HfFxvf2hO5l4Ydrwq67wZzpqFRM=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -55,7 +55,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pSetZdlrja86idfaTfgabGGyZkEXkFGVCV35iE/gAV4=
+			VmLGSBA+k/0jS/MN/Kb+v7RAobqtLHIw1EaGINXOJJ4=
 			</data>
 		</dict>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
@@ -83,14 +83,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qMHjtwTu+KG15KHIIENokxrFyswMjMVryc1yhgIkNu4=
+			JeQM59Y6aezMsJWpvNwwWxzA3yIMNv9no+ZlrzPe26U=
 			</data>
 		</dict>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pSetZdlrja86idfaTfgabGGyZkEXkFGVCV35iE/gAV4=
+			VmLGSBA+k/0jS/MN/Kb+v7RAobqtLHIw1EaGINXOJJ4=
 			</data>
 		</dict>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
@@ -118,7 +118,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KUM+szPl9+gL+GShvq6TbZf40tFoaosIUMxjCTjrDgk=
+			mK0ldor3NvF+DXV+D/WVmWQ09Po5Jc+Ty9wNuGtKHZ0=
 			</data>
 		</dict>
 	</dict>
