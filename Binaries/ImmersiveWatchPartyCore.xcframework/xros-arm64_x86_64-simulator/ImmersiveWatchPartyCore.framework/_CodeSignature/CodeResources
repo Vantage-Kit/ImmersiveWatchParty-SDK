@@ -10,7 +10,7 @@
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros-simulator.abi.json</key>
 		<data>
-		28BG2Tq/y1rZxjgjlEuHUDJDkFM=
+		qAataKtRcZanqMDyqwSyfVQZnCY=
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
@@ -26,11 +26,11 @@
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros-simulator.swiftmodule</key>
 		<data>
-		pr9ih3JG+zVkpahimje7TeVJMmM=
+		hf0t2Mx+I11O0IOF29NQG/eDITE=
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.abi.json</key>
 		<data>
-		28BG2Tq/y1rZxjgjlEuHUDJDkFM=
+		qAataKtRcZanqMDyqwSyfVQZnCY=
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.swiftmodule</key>
 		<data>
-		HfFxvf2hO5l4Ydrwq67wZzpqFRM=
+		E3YR3Bu+6lBKarA7ToOq6rXhrAo=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -55,7 +55,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VmLGSBA+k/0jS/MN/Kb+v7RAobqtLHIw1EaGINXOJJ4=
+			y94bzzw5Ybc5U/WBkNZtEHTn3ns2gndoRqWkkokNCPo=
 			</data>
 		</dict>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/arm64-apple-xros-simulator.private.swiftinterface</key>
@@ -83,14 +83,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JeQM59Y6aezMsJWpvNwwWxzA3yIMNv9no+ZlrzPe26U=
+			6wNbCb3no23yvDlJhRyy5c1XXWWXohzyUu97LK2MJeE=
 			</data>
 		</dict>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VmLGSBA+k/0jS/MN/Kb+v7RAobqtLHIw1EaGINXOJJ4=
+			y94bzzw5Ybc5U/WBkNZtEHTn3ns2gndoRqWkkokNCPo=
 			</data>
 		</dict>
 		<key>Modules/ImmersiveWatchPartyCore.swiftmodule/x86_64-apple-xros-simulator.private.swiftinterface</key>
@@ -118,7 +118,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mK0ldor3NvF+DXV+D/WVmWQ09Po5Jc+Ty9wNuGtKHZ0=
+			ZOzHzxkHAsbip6ovZjNrt5mcpsfC1rlMk5RZuHx05I0=
 			</data>
 		</dict>
 	</dict>

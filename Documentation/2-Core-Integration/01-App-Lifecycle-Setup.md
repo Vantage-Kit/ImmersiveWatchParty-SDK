@@ -204,6 +204,148 @@ extension AppState: ImmersiveWatchPartyDelegate {
 
 ---
 
+### 4.3 Bridging Environment Actions to Delegates
+
+⚠️ **CRITICAL PATTERN**: The `sessionManager(_:received:)` delegate method needs to call `openImmersiveSpace`, but this is a SwiftUI Environment value that only exists inside Views. Your `AppState` class doesn't have direct access to it.
+
+**The Problem:**
+
+```swift
+// ❌ This won't work - AppState doesn't have access to openImmersiveSpace
+extension AppState: ImmersiveWatchPartyDelegate {
+    func sessionManager(
+        _ manager: ImmersiveWatchPartyManager,
+        received activity: some GroupActivity
+    ) async -> Bool {
+        // ... load video ...
+        await openImmersiveSpace()  // ❌ ERROR: Cannot find 'openImmersiveSpace' in scope
+        return true
+    }
+}
+```
+
+**Solution: State Flag Pattern**
+
+Use a boolean flag in your `AppState` that the View observes:
+
+**Step 1: Add flag to AppState**
+
+```swift
+@MainActor
+@Observable
+class AppState {
+    let sharePlayManager: ImmersiveWatchPartyManager
+    var selectedStream: StreamModel?
+    
+    // Flag to trigger immersive space opening
+    var shouldOpenImmersiveSpace: Bool = false
+    
+    // ... rest of your state
+}
+```
+
+**Step 2: Set flag in delegate**
+
+```swift
+extension AppState: ImmersiveWatchPartyDelegate {
+    func sessionManager(
+        _ manager: ImmersiveWatchPartyManager,
+        received activity: some GroupActivity
+    ) async -> Bool {
+        guard let watchActivity = activity as? WatchTogetherActivity else {
+            return false
+        }
+        
+        // Load the video
+        do {
+            try await loadVideo(id: watchActivity.videoID)
+            
+            // Trigger immersive space opening via state flag
+            self.shouldOpenImmersiveSpace = true
+            
+            return true
+        } catch {
+            print("❌ Failed to load content: \(error)")
+            return false
+        }
+    }
+}
+```
+
+**Step 3: Observe flag in your View**
+
+```swift
+@main
+struct YourApp: App {
+    @State private var appState = AppState()
+    @Environment(\.openImmersiveSpace) private var openImmersiveSpace
+    @Environment(\.dismissWindow) private var dismissWindow
+
+    var body: some Scene {
+        WindowGroup(id: "MainWindow") {
+            ContentView()
+                .environment(appState)
+                .environment(\.sharePlayMessenger, appState.sharePlayManager.messenger)
+                .groupActivityAssociation(.primary("main-window"))
+                // CRITICAL: Observe the flag and trigger space opening
+                .onChange(of: appState.shouldOpenImmersiveSpace) { _, shouldOpen in
+                    if shouldOpen {
+                        if let stream = appState.selectedStream {
+                            Task {
+                                await openImmersiveSpace(value: stream)
+                                appState.shouldOpenImmersiveSpace = false
+                                dismissWindow(id: "MainWindow")
+                            }
+                        }
+                    }
+                }
+                .task {
+                    await monitorSharePlaySessions()
+                }
+        }
+        // ... rest of scenes
+    }
+}
+```
+
+**Why This Works:**
+
+1. Delegate (in `AppState`) sets the flag when SharePlay activity arrives
+2. View (with access to `openImmersiveSpace`) observes the flag
+3. View calls `openImmersiveSpace` when flag becomes `true`
+4. View resets the flag to `false` after opening
+
+**Alternative: Closure Pattern**
+
+If you prefer, you can inject the environment action as a closure:
+
+```swift
+@Observable
+class AppState {
+    var immersiveSpaceOpenAction: (() async -> Void)?
+    
+    // In delegate:
+    func sessionManager(...) async -> Bool {
+        // ... load video ...
+        await immersiveSpaceOpenAction?()
+        return true
+    }
+}
+
+// In App:
+.task {
+    appState.immersiveSpaceOpenAction = {
+        guard let stream = appState.selectedStream else { return }
+        await openImmersiveSpace(value: stream)
+    }
+    await monitorSharePlaySessions()
+}
+```
+
+Choose the pattern that fits your architecture, but the state flag pattern is generally more SwiftUI-idiomatic and easier to debug.
+
+---
+
 # 5. App Structure & Initialization
 
 ### 5.1 Create App State

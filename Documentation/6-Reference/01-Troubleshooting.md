@@ -424,6 +424,60 @@ let videoMaterial = VideoMaterial(avPlayer: player)
 let screen = ModelEntity(mesh: .generatePlane(...), materials: [videoMaterial])
 ```
 
+#### Immersive Space Doesn't Open When Joining SharePlay
+
+**Symptom**: Green handlebar appears (SharePlay is active) but immersive space doesn't open for the receiver when joining a session.
+
+**Cause**: The `sessionManager(_:received:)` delegate updates state but doesn't trigger `openImmersiveSpace`. This happens because the delegate method runs in your `AppState` class, which doesn't have access to SwiftUI environment values like `openImmersiveSpace`.
+
+**Solution**: Use the state flag pattern to bridge the delegate to the View. Add a boolean flag to your `AppState`:
+
+```swift
+@MainActor
+@Observable
+class AppState {
+    var shouldOpenImmersiveSpace: Bool = false
+    // ... rest of state
+}
+
+extension AppState: ImmersiveWatchPartyDelegate {
+    func sessionManager(
+        _ manager: ImmersiveWatchPartyManager,
+        received activity: some GroupActivity
+    ) async -> Bool {
+        // ... load video ...
+        self.shouldOpenImmersiveSpace = true  // Set flag
+        return true
+    }
+}
+```
+
+Then observe the flag in your App and trigger the environment action:
+
+```swift
+@main
+struct YourApp: App {
+    @State private var appState = AppState()
+    @Environment(\.openImmersiveSpace) private var openImmersiveSpace
+
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .onChange(of: appState.shouldOpenImmersiveSpace) { _, shouldOpen in
+                    if shouldOpen {
+                        Task {
+                            await openImmersiveSpace(id: "theater")
+                            appState.shouldOpenImmersiveSpace = false
+                        }
+                    }
+                }
+        }
+    }
+}
+```
+
+See Section 4.3 in [App Lifecycle Setup](../2-Core-Integration/01-App-Lifecycle-Setup.md) for the complete implementation pattern.
+
 #### Video Plays But Not Synced Across Devices
 
 **Cause**: Player not registered with coordination

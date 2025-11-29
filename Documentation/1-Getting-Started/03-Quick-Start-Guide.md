@@ -398,12 +398,22 @@ import ImmersiveWatchParty
 @main
 struct WatchPartyApp: App {
     @State private var appState = AppState()
+    @Environment(\.openImmersiveSpace) private var openImmersiveSpace
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(appState)
                 .environment(\.sharePlayMessenger, appState.sharePlayManager.messenger)
+                // Observe flag to trigger immersive space opening
+                .onChange(of: appState.shouldOpenImmersiveSpace) { _, shouldOpen in
+                    if shouldOpen {
+                        Task {
+                            await openImmersiveSpace(id: "theater")
+                            appState.shouldOpenImmersiveSpace = false
+                        }
+                    }
+                }
         }
 
         ImmersiveSpace(id: "theater") {
@@ -429,6 +439,9 @@ class AppState {
 
     var player: AVPlayer?
     var currentVideoID: String?
+    
+    // Flag to trigger immersive space opening
+    var shouldOpenImmersiveSpace: Bool = false
 
     init() {
         self.sharePlayManager = ImmersiveWatchPartyManager(localUUID: UUID())
@@ -455,6 +468,7 @@ extension AppState: ImmersiveWatchPartyDelegate {
 
         do {
             try await loadVideo(id: watchActivity.videoID)
+            self.shouldOpenImmersiveSpace = true  // ← Trigger immersive space opening
             return true
         } catch {
             print("Failed to load video: \(error)")
